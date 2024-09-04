@@ -1,0 +1,52 @@
+<head>
+  <title>Opiniones</title>
+</head>
+<body>
+  {% extends "opiniones/base_layout.html" %} {% block content %}
+  <div class="content">
+    <div class="row justify-content-center">
+      <div class="card full-width card-margin">
+        <div class="row justify-content-space-between">
+          <h1 class="col-12">Opiniones</h1>
+          <a href="{% url 'opiniones:opinion-form' %}">
+            <button class="button">Crear</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="card card-margin">
+      <div class="list-wrapper">
+        <table class="base-table">
+          <thead class="table-head">
+            <tr>
+              <th>Curso</th>
+              <th>Profesor</th>
+              <th>Dificultad</th>
+              <th>Teoricidad</th>
+              <th>Matraca</th>
+              <th>Pauteable</th>
+              <th>Apoyo del profesor</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for opinion in opiniones %}
+            <tr>
+              <td>{{opinion.course}}</td>
+              <td>{{opinion.professor}}</td>
+              <td>{{opinion.difficulty}}</td>
+              <td>{{opinion.theoricity}}</td>
+              <td>{{opinion.matraca}}</td>
+              <td>
+                {% if opinion.pauteable == True %} Si {% else %} No {% endif %}
+              </td>
+              <td>{{opinion.teacher_support}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</body>
+<style></style>

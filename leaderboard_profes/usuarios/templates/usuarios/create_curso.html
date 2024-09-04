@@ -1,0 +1,27 @@
+<head>
+  <title>Cursos</title>
+</head>
+<body>
+  {% extends "opiniones/base_layout.html" %} {% block content %}
+  <div class="content">
+    <div class="row justify-content-center">
+      <div class="card full-width card-margin">
+        <h1 class="bg-red col-12">Ingresar un curso</h1>
+      </div>
+    </div>
+    <div class="card card-margin">
+      <form method="post">
+        {% csrf_token %} {% for field in forms %}
+        <div class="field-wrapper">
+          {{ field.errors }} {{ field.label_tag }} {{ field }}
+        </div>
+        {% endfor %}
+        <div class="submit-wrapper">
+          <input type="submit" value="Enviar" class="submit-button" />
+        </div>
+      </form>
+    </div>
+  </div>
+  {% endblock %}
+</body>
+<style></style>

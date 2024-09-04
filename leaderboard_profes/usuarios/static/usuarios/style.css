@@ -1,0 +1,11 @@
+/* Poner estilos aca*/
+.header {
+    position: fixed;
+    top: 0;
+}
+body { padding-top: 50px; }
+main {padding-top: 200px; }
+
+h1 {
+    text-align: center;
+  }

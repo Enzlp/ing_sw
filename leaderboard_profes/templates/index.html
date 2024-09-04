@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="container">
+    <div class="d-sm-flex align-items-center justify-content-between">
+    <div>
+        <h1 class ="text-dark">Califica a tu <span class="text-primary"> Profesor Favorito </span></h1>
+        <p class="lead my-4 text-dark">
+        Dicen que un buen profesor puede hacer que ames u odies una asignatura. Nuestro objetivo, es crear
+        una plataforma que potencie la enseñanza con los mejores educadores en base a calificaciones de la propia
+        comunidad.
+        </p>
+        <a href="{% url 'usuarios:register_user' %}">
+        <button class="btn btn-primary btn-lg" >Registrate y aprende más!</button>
+        </a>
+    </div>
+        <img class="img-fluid w-50 d-none d-sm-block" 
+        src="https://img.freepik.com/free-vector/studying-concept-illustration_114360-1301.jpg" alt=""/>
+    </div>
+</div>
+{% endblock %}

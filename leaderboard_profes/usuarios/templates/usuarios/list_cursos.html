@@ -1,0 +1,51 @@
+<head>
+  <title>Cursos</title>
+</head>
+<body>
+  {% extends "opiniones/base_layout.html" %} {% block content %}
+  <div class="content">
+    <div class="row justify-content-center">
+      <div class="card full-width card-margin">
+        <div class="row justify-content-space-between">
+          <h1 class="col-12">Cursos</h1>
+          <a href="{% url 'usuarios:cursos-create' %}">
+            <button class="button">Crear</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="card card-margin">
+      <div class="list-wrapper">
+        <table class="base-table">
+          <thead class="table-head">
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Departamento</th>
+              <th>Creditos</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for curso in cursos %}
+            <tr>
+              <td>{{curso.code}}</td>
+              <td>{{curso.name}}</td>
+              <td>{{curso.department}}</td>
+              <td>{{curso.credits}}</td>
+              <td class="cell-center">
+                <a href="{% url 'usuarios:cursos-view' curso.pk %}">
+                  <button class="action-button button-primary">Ver</button>
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div></div>
+    </div>
+  </div>
+  {% endblock %}
+</body>
+<style></style>

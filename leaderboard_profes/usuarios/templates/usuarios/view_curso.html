@@ -1,0 +1,72 @@
+<head>
+  <title>Cursos</title>
+</head>
+<body>
+  {% extends "opiniones/base_layout.html" %} {% block content %}
+  <div class="content">
+    <div class="row justify-content-center">
+      <div class="card full-width card-margin">
+        <h1 class="bg-red col-12">Detalle de curso</h1>
+      </div>
+    </div>
+    <div class="card card-margin">
+      <div class="details-container">
+        <div class="detail-info">
+          <div class="pb-md">
+            <div class="detail-caption">{{curso.code}}</div>
+            <div class="detail-text-big">{{ curso.name }}</div>
+          </div>
+          <div class="detail-text">Departamento: {{ curso.department }}</div>
+          <div class="detail-text">Créditos: {{ curso.credits }}</div>
+          <div class="detail-text">
+            Dificultad promedio: {{curso.avg_difficulty}}
+          </div>
+          <div class="detail-text">
+            Teoricidad promedio: {{curso.avg_theoricity}}
+          </div>
+          <div class="detail-text">Matraca promedio: {{curso.avg_matraca}}</div>
+          <div class="detail-text">
+            Apoyo del profesor promedio: {{curso.avg_teacher_support}}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{curso.opinions_set}}
+    <div class="card card-margin">
+      <div class="list-wrapper-nested">
+        <div class="row justify-content-space-between">
+          <div class="list-title">Opiniones</div>
+          <a href="{% url 'opiniones:opinion-form' %}?curso_id={{ curso.pk }}">
+            <button class="button">Crear</button>
+          </a>
+        </div>
+        <table class="base-table">
+          <thead class="table-head">
+            <tr>
+              <th>Dificultad</th>
+              <th>Teoricidad</th>
+              <th>Matraca</th>
+              <th>Pauteable</th>
+              <th>Apoyo del profesor</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for opinion in curso.opinion_set.all %}
+            <tr>
+              <td>{{opinion.difficulty}}</td>
+              <td>{{opinion.theoricity}}</td>
+              <td>{{opinion.matraca}}</td>
+              <td>
+                {% if opinion.pauteable == True %} Si {% else %} No {% endif %}
+              </td>
+              <td>{{opinion.teacher_support}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</body>
+<style></style>
