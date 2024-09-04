@@ -20,16 +20,16 @@ python manage.py runserver
 
 El programa quedará siendo ejecutado en segundo plano, de manera local, para poder ver el sitio web en su navegador. Una vez seguido los pasos anteriormente dichos, dirijase a su navegador e ingrese a http://127.0.0.1:8000/, donde podrá que encontrar el sitio web.
 
-> Importante
+> [!IMPORTANTE]
 >A veces debido a fallas con django y manage.py, también puede serle más útil usar 
-```sh
-python manage.py migrate
-```
+>```sh
+>python manage.py migrate
+>```
 >O ignorar este paso completamente y probar solo con:
-```sh
-cd leaderboard_profes
-python manage.py runserver      
-```
+>```sh
+>cd leaderboard_profes
+>python manage.py runserver      
+>```
 ## Como interactuar con la demo
 
 
