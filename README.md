@@ -32,28 +32,8 @@ El programa quedará siendo ejecutado en segundo plano, de manera local, para po
 >```
 ## Como interactuar con la demo
 
+Dentro de la landing page encontrarán un link al acceso y registro del sitio como tal. Para registrarse hay que seleccionar registrate, y proveer un usuario, contraseña y mail. Una vez registrado el usuario, será redirigido a la página de login, donde es necesario ingresar su nombre de usuario y contraseña.
 
+Una vez dentro de la página principal, diríjase a la página de cursos. Aquí podrá crear un curso el cual podrá calificar luego. Una vez creado el curso puede ir a la página de opiniones y ver que el curso creado aparecerá dentro de las opciones de cursos disponibles, además de otras opciones de calificación como opiniones y reseñas que puede crear. 
 
-# 2023-2-grupo-1
-Se implementó:
-- página de registro
-- landing page
-- página de login
-- página de perfil
-- ver cursos
-- crear cursos
-- enviar reseñas de cursos
-- ver reseñas
-
-
-```sh
-python3 -m venv .venv
-pip install -r .\requirements.txt
-```
-En esta parte se debe entrar al ambiente virtual, que varía según el sistema operativo.
-```sh
-cd leaderboard_profes
-./manage.py migrate
-python manage.py runserver      
-```
-Se debe ingresar a http://127.0.0.1:8000/, desde donde al apretar Opiniones, permitirá ver las reseñas y crearlas. Mientras que al apretar Cursos, permitirá ver los cursos y crearlos.
+Para poder volver a la página principal basta oprimir el botón de cerrar sesión.
